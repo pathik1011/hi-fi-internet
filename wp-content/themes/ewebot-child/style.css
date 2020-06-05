@@ -7,3 +7,6 @@ Version: 1.0
 Template: ewebot
 */
 @import url("../ewebot/style.css");
+
+p {word-break: break-all;}
+ul li {fornt-size: 16px;}
