@@ -44,19 +44,6 @@ $break_arr = array(
 	<?php endif; ?>
 
 	<tr>
-		<th>
-			<?php $id = Base::O_PURGE_STALE; ?>
-			<?php $this->title( $id ); ?>
-		</th>
-		<td>
-			<?php $this->build_switch( $id ); ?>
-			<div class="litespeed-desc">
-				<?php echo __( 'If ON, stale copy of cached page will be shown to visitor until a new cache copy is available. Reduces the server load for following visits. If OFF, page will be dynamically generated while visitor waits.', 'litespeed-cache' ); ?>
-			</div>
-		</td>
-	</tr>
-
-	<tr>
 		<th><?php echo __( 'Auto Purge Rules For Publish/Update', 'litespeed-cache' ); ?></th>
 		<td>
 			<div class="litespeed-callout notice notice-warning inline">
@@ -89,6 +76,26 @@ $break_arr = array(
 
 	<tr>
 		<th>
+			<?php $id = Base::O_PURGE_STALE; ?>
+			<?php $this->title( $id ); ?>
+		</th>
+		<td>
+			<?php $this->build_switch( $id ); ?>
+			<div class="litespeed-desc">
+				<?php echo __( 'If ON, stale copy of cached page will be shown to visitor until a new cache copy is available. Reduces the server load for following visits. If OFF, page will be dynamically generated while visitor waits.', 'litespeed-cache' ); ?>
+				<?php $this->learn_more( 'https://docs.litespeedtech.com/lscache/lscwp/cache/#serve-stale' ); ?>
+			</div>
+			<div class="litespeed-callout notice notice-warning inline">
+				<h4><?php echo __( 'Note', 'litespeed-cache' ); ?></h4>
+				<p>
+					<?php echo __( 'By design, this option may serve stale content. Do not enable this option, if that is not OK with you.', 'litespeed-cache' ); ?><br />
+				</p>
+			</div>
+		</td>
+	</tr>
+
+	<tr>
+		<th>
 			<?php $id = Base::O_PURGE_TIMED_URLS; ?>
 			<?php $this->title( $id ); ?>
 		</th>
@@ -98,6 +105,16 @@ $break_arr = array(
 				<?php echo sprintf( __( 'The URLs here (one per line) will be purged automatically at the time set in the option "%s".', 'litespeed-cache' ), __( 'Scheduled Purge Time', 'litespeed-cache' ) ); ?><br />
 				<?php echo sprintf( __( 'Both %1$s and %2$s are acceptable.', 'litespeed-cache' ), '<code>http://www.example.com/path/url.php</code>', '<code>/path/url.php</code>' ); ?>
 				<?php Doc::one_per_line(); ?>
+			</div>
+			<div class="litespeed-desc">
+				<?php echo sprintf( __( 'Wildcard %1$s supported (match zero or more characters). For example, to match %2$s and %3$s, use %4$s.', 'litespeed-cache' ), '<code>*</code>', '<code>/path/u-1.html</code>', '<code>/path/u-2.html</code>', '<code>/path/u-*.html</code>' ) ; ?>
+			</div>
+			<div class="litespeed-callout notice notice-warning inline">
+				<h4><?php echo __( 'Note', 'litespeed-cache' ); ?></h4>
+				<p>
+					<?php echo __( 'For URLs with wildcards, there may be a delay in initiating scheduled purge.', 'litespeed-cache' ); ?><br />
+					<?php $this->learn_more( 'https://docs.litespeedtech.com/lscache/lscwp/cache/#scheduled-purge-urls' ); ?>
+				</p>
 			</div>
 		</td>
 	</tr>
