@@ -2,8 +2,8 @@
 Contributors: LiteSpeedTech
 Tags: caching, optimize, performance, pagespeed, seo, speed, image optimize, compress, object cache, redis, memcached, database cleaner
 Requires at least: 4.0
-Tested up to: 5.4.1
-Stable tag: 3.2.2
+Tested up to: 5.4.2
+Stable tag: 3.2.3.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -233,8 +233,8 @@ For more detailed information about crawler setup, please see [the Crawler docum
 * [Ninja Forms](https://wordpress.org/plugins/ninja-forms/)
 * [Post Types Order 1.9.3.6+](https://wordpress.org/plugins/post-types-order/)
 * [BoomBox — Viral Magazine WordPress Theme](https://themeforest.net/item/boombox-viral-buzz-wordpress-theme/16596434?ref=PX-lab)
-* Beaver Builder
 * FacetWP (LSWS 5.3.6+)
+* Beaver Builder
 * WpDiscuz
 * WP-Stateless
 * Elementor
@@ -243,6 +243,21 @@ The vast majority of plugins and themes are compatible with LiteSpeed Cache. The
 
 
 == Changelog ==
+
+= 3.2.3.2 - Jun 19 2020 =
+* 🔥🐞**Page Optimize** Hotfix for CSS/JS minify/combine.
+
+= 3.2.3.1 - Jun 18 2020 =
+* **API** New filter `litespeed_buffer_before` and `litespeed_buffer_after`. (#PR243 @joejordanbrown)
+
+= 3.2.3 - Jun 18 2020 =
+* 🌱**Page Optimize** Added Unique CSS option for future removal of unused CSS per page. (@moongear)
+* **Page Optimize** Fixed an issue where Font Optimization could fail when having Load JS Deferred and Load Inline JS Deferred. (#PR241 @joejordanbrown)
+* 🐞**Page Optimize** Fixed an issue with Font Display Optimization which caused Google Fonts to load incorrectly. (#PR240 @joejordanbrown @haidan)
+* 🐞**Network** Use Primary Site Configuration setting for network sites now works properly with Object Cache and Browser Cache. (#56175101)
+* **API** Added filter `litespeed_is_from_cloud` to detect if the current request is from QC or not. (@lechon)
+* **ESI** ESI Nonce now can fetch latest list with one click.
+* **GUI** Updated remaining documentation links & some minor UI tweaks. (@Joshua Reynolds)
 
 = 3.2.2 - Jun 10 2020 =
 * 🌱**Purge** Scheduled Purge URLs now supports wildcard. (#427338)

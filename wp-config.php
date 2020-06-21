@@ -21,7 +21,7 @@ define( 'WP_CACHE', true ) ;
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'hi-fi-internet' );
+define( 'DB_NAME', 'hi5internet' );
 
 /** MySQL database username */
 define( 'DB_USER', 'root' );
